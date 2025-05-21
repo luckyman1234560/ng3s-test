@@ -30,8 +30,8 @@
 
     .keyboard-area {
       position: relative;
-      width: 600px;
-      height: 200px;
+      width: 800px;
+      height: 300px;
       border: 1px solid #ccc;
       margin: 20px auto;
       background-color: #f9f9f9;
@@ -41,7 +41,6 @@
       position: absolute;
       width: 50px;
       height: 50px;
-      background-color: rgb(255, 133, 133);
       border: none;
       border-radius: 12px;
       font-size: 18px;
@@ -53,11 +52,39 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
-    /* 模擬鍵盤上 '1' 鍵的位置 */
-    .key-1 {
-      top: 20px;
-      left: 60px;
-    }
+    /* 不同顏色群組 */
+    .red    { background-color: rgb(255, 133, 133); }
+    .blue   { background-color: rgb(118, 123, 255); }
+    .green  { background-color: rgb(173, 255, 126); }
+    .blue2  { background-color: rgb(132, 175, 255); }
+    .green2 { background-color: rgb(122, 255, 153); }
+
+    /* 模擬鍵盤位置 */
+    .key-1  { top: 20px;  left: 60px; }
+    .key-2  { top: 20px;  left: 120px; }
+    .key-3  { top: 20px;  left: 180px; }
+    .key-4  { top: 20px;  left: 240px; }
+    .key-8  { top: 20px;  left: 360px; }
+    .key-9  { top: 20px;  left: 420px; }
+    .key-0  { top: 20px;  left: 480px; }
+    .key--  { top: 20px;  left: 540px; }
+    .key-eq { top: 20px;  left: 600px; }
+
+    .key-q  { top: 90px;  left: 60px; }
+    .key-w  { top: 90px;  left: 120px; }
+    .key-e  { top: 90px;  left: 180px; }
+    .key-r  { top: 90px;  left: 240px; }
+
+    .key-a  { top: 160px; left: 60px; }
+    .key-s  { top: 160px; left: 120px; }
+    .key-d  { top: 160px; left: 180px; }
+    .key-f  { top: 160px; left: 240px; }
+
+    .key-j  { top: 160px; left: 360px; }
+    .key-k  { top: 160px; left: 420px; }
+    .key-l  { top: 160px; left: 480px; }
+    .key-semicolon { top: 160px; left: 540px; }
+    .key-quote     { top: 160px; left: 600px; }
   </style>
 </head>
 <body>
@@ -68,7 +95,31 @@
 
   <!-- 鍵盤模擬區塊 -->
   <div class="keyboard-area">
-    <button class="key-button key-1">幫</button>
+    <button class="key-button key-1 red">幫</button>
+    <button class="key-button key-2 red">滂</button>
+    <button class="key-button key-3 red">並</button>
+    <button class="key-button key-4 red">明</button>
+    <button class="key-button key-8 blue">精</button>
+    <button class="key-button key-9 blue">清</button>
+    <button class="key-button key-0 blue">從</button>
+    <button class="key-button key-- blue">心</button>
+    <button class="key-button key-eq blue">邪</button>
+
+    <button class="key-button key-q green">端</button>
+    <button class="key-button key-w green">透</button>
+    <button class="key-button key-e green">定</button>
+    <button class="key-button key-r green">泥</button>
+
+    <button class="key-button key-a green2">知</button>
+    <button class="key-button key-s green2">徹</button>
+    <button class="key-button key-d green2">澄</button>
+    <button class="key-button key-f green2">娘</button>
+
+    <button class="key-button key-j blue2">莊</button>
+    <button class="key-button key-k blue2">初</button>
+    <button class="key-button key-l blue2">崇</button>
+    <button class="key-button key-semicolon blue2">生</button>
+    <button class="key-button key-quote blue2">俟</button>
   </div>
 </body>
 </html>

@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>廣韻猜聲母ver1.9</title> 
+  <title>廣韻猜聲母ver1.10</title> 
   <meta name="author" content="我">
   <meta name="description" content="首頁">
   <meta name="keywords" content="網站">
@@ -168,7 +168,10 @@
 
     <button class="key-button key-a green2" data-key="a"><span class="key-label"></span>知</button>
     <button class="key-button key-s green2" data-key="s"><span class="key-label"></span>徹</button>
-    <button class="key-button key-d green2" data-key="d"><span class="key-label"></span>澄</button>
+    <div class="key-wrapper">
+      <button class="key-button key-d green2" data-key="d">澄</button>
+      <div class="key-label-float">d</div>
+    </div>
     <button class="key-button key-f green2" data-key="f"><span class="key-label"></span>娘</button>
     <button class="key-button key-g grey" disabled><span class="key-label"></span></button>
     <button class="key-button key-h blue3" data-key="h"><span class="key-label"></span>章</button>
@@ -201,18 +204,18 @@
     // 點擊按鈕時更新 consochar
     
     buttons.forEach(button => {
-      const key = button.getAttribute('data-key');
-      const wrapper = document.createElement('div');
-      wrapper.className = 'key-wrapper';
-      wrapper.style.position = 'relative';
-      wrapper.style.display = 'inline-block';
+      //const key = button.getAttribute('data-key');
+      //const wrapper = document.createElement('div');
+      //wrapper.className = 'key-wrapper';
+      //wrapper.style.position = 'relative';
+      //wrapper.style.display = 'inline-block';
 
-      button.parentNode.insertBefore(wrapper, button);
-      wrapper.appendChild(button);
-      const label = document.createElement('div');
-      label.className = 'key-label-float';
-      label.textContent = key;
-      wrapper.appendChild(label);
+      //button.parentNode.insertBefore(wrapper, button);
+      //wrapper.appendChild(button);
+      //const label = document.createElement('div');
+      //label.className = 'key-label-float';
+      //label.textContent = key;
+      //wrapper.appendChild(label);
 
       button.addEventListener('click', () => {
         consochar = button.textContent;

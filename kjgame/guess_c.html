@@ -111,15 +111,15 @@
 
   <!-- 鍵盤模擬區塊 -->
   <div class="keyboard-area">
-    <button class="key-button key-1 red">幫</button>
-    <button class="key-button key-2 red">滂</button>
-    <button class="key-button key-3 red">並</button>
-    <button class="key-button key-4 red">明</button>
-    <button class="key-button key-8 blue">精</button>
-    <button class="key-button key-9 blue">清</button>
-    <button class="key-button key-0 blue">從</button>
-    <button class="key-button key-- blue">心</button>
-    <button class="key-button key-eq blue">邪</button>
+    <button class="key-button key-1 red" data-key="1">幫</button>
+    <button class="key-button key-2 red" data-key="2">滂</button>
+    <button class="key-button key-3 red" data-key="3">並</button>
+    <button class="key-button key-4 red" data-key="4">明</button>
+    <button class="key-button key-8 blue" data-key="8">精</button>
+    <button class="key-button key-9 blue" data-key="9">清</button>
+    <button class="key-button key-0 blue" data-key="0">從</button>
+    <button class="key-button key-- blue" data-key="-">心</button>
+    <button class="key-button key-eq blue" data-key="=">邪</button>
 
     <button class="key-button key-q green">端</button>
     <button class="key-button key-w green">透</button>
@@ -159,17 +159,35 @@
 
   <script>
     let consochar = '';
-
-    // 取得所有按鈕
     const buttons = document.querySelectorAll('.key-button');
     const display = document.getElementById('selected-conso');
 
+    // 點擊按鈕時更新 consochar
     buttons.forEach(button => {
       button.addEventListener('click', () => {
         consochar = button.textContent;
-        display.textContent = consochar; // 即時顯示
-        // 你也可以在這裡執行其他動作，例如 console.log(consochar);
+        display.textContent = consochar;
       });
+    });
+
+    // 鍵盤對應資料表：key 對應 data-key 屬性
+    const keyMap = {};
+    buttons.forEach(button => {
+      const key = button.getAttribute('data-key');
+      keyMap[key] = button;
+    });
+
+    // 處理鍵盤輸入
+    document.addEventListener('keydown', (e) => {
+      const key = e.key;
+      if (keyMap[key]) {
+        const button = keyMap[key];
+        consochar = button.textContent;
+        display.textContent = consochar;
+        // 可選：模擬按下的視覺效果
+        button.style.transform = 'scale(0.95)';
+        setTimeout(() => button.style.transform = 'scale(1)', 100);
+      }
     });
   </script>
   

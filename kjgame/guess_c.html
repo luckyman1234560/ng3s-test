@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>廣韻猜聲母ver1.1</title> 
+  <title>廣韻猜聲母ver1.2</title> 
   <meta name="author" content="我">
   <meta name="description" content="首頁">
   <meta name="keywords" content="網站">
@@ -58,6 +58,10 @@
     .green  { background-color: rgb(173, 255, 126); }
     .blue2  { background-color: rgb(132, 175, 255); }
     .green2 { background-color: rgb(122, 255, 153); }
+    .blue3  { background-color: rgb(126, 221, 255); }
+    .yellow { background-color: rgb(253, 255, 120); }
+    .orange { background-color: rgb(255, 209, 130); }
+    .purple { background-color: rgb(212, 125, 255); }
 
     /* 模擬鍵盤位置 */
     .key-1  { top: 20px;  left: 60px; }
@@ -107,7 +111,7 @@
   <p id="box_tip" class="tip">隨機按一個鍵啟動遊戲</p>
   <div id="word" class="q">字</div>
   <p id="box_check" class="tip">目前持續製作中，隨時會更新。</p>
-  <p id="box_num" class="tip">（這裡等一下顯示得分）</p>
+  <p id="box_num" class="tip">（這裡2等一下顯示得分）</p>
 
   <!-- 鍵盤模擬區塊 -->
   <div class="keyboard-area">
@@ -121,37 +125,37 @@
     <button class="key-button key-- blue" data-key="-">心</button>
     <button class="key-button key-eq blue" data-key="=">邪</button>
 
-    <button class="key-button key-q green">端</button>
-    <button class="key-button key-w green">透</button>
-    <button class="key-button key-e green">定</button>
-    <button class="key-button key-r green">泥</button>
-    <button class="key-button key-u green">莊</button>
-    <button class="key-button key-i green">初</button>
-    <button class="key-button key-o green">崇</button>
-    <button class="key-button key-p green">生</button>
-    <button class="key-button key-leftsqr green">俟</button>
+    <button class="key-button key-q green" data-key="q">端</button>
+    <button class="key-button key-w green" data-key="w">透</button>
+    <button class="key-button key-e green" data-key="e">定</button>
+    <button class="key-button key-r green" data-key="r">泥</button>
+    <button class="key-button key-u blue2" data-key="u">莊</button>
+    <button class="key-button key-i blue2" data-key="i">初</button>
+    <button class="key-button key-o blue2" data-key="o">崇</button>
+    <button class="key-button key-p blue2" data-key="p">生</button>
+    <button class="key-button key-leftsqr blue2" data-key="[">俟</button>
 
-    <button class="key-button key-a green2">知</button>
-    <button class="key-button key-s green2">徹</button>
-    <button class="key-button key-d green2">澄</button>
-    <button class="key-button key-f green2">娘</button>
-    <button class="key-button key-h blue2">章</button>
-    <button class="key-button key-j blue2">昌</button>
-    <button class="key-button key-k blue2">常</button>
-    <button class="key-button key-l blue2">書</button>
-    <button class="key-button key-semicolon blue2">船</button>
+    <button class="key-button key-a green2" data-key="a">知</button>
+    <button class="key-button key-s green2" data-key="s">徹</button>
+    <button class="key-button key-d green2" data-key="d">澄</button>
+    <button class="key-button key-f green2" data-key="f">娘</button>
+    <button class="key-button key-h blue3" data-key="h">章</button>
+    <button class="key-button key-j blue3" data-key="j">昌</button>
+    <button class="key-button key-k blue3" data-key="k">常</button>
+    <button class="key-button key-l blue3" data-key="l">書</button>
+    <button class="key-button key-semicolon blue3" data-key=";">船</button>
     
-    <button class="key-button key-z blue2">見</button>
-    <button class="key-button key-x blue2">溪</button>
-    <button class="key-button key-c blue2">群</button>
-    <button class="key-button key-v blue2">疑</button>
-    <button class="key-button key-b blue2">影</button>
-    <button class="key-button key-n blue2">云</button>
-    <button class="key-button key-m blue2">以</button>
-    <button class="key-button key-comma blue2">曉</button>
-    <button class="key-button key-period blue2">匣</button>
-    <button class="key-button key-slash blue2">來</button>
-    <button class="key-button key-quote blue2">日</button>
+    <button class="key-button key-z yellow" data-key="z">見</button>
+    <button class="key-button key-x yellow" data-key="x">溪</button>
+    <button class="key-button key-c yellow" data-key="c">群</button>
+    <button class="key-button key-v yellow" data-key="v">疑</button>
+    <button class="key-button key-b orange" data-key="b">影</button>
+    <button class="key-button key-n orange" data-key="n">云</button>
+    <button class="key-button key-m orange" data-key="m">以</button>
+    <button class="key-button key-comma orange" data-key=",">曉</button>
+    <button class="key-button key-period orange" data-key=".">匣</button>
+    <button class="key-button key-slash purple" data-key="/">來</button>
+    <button class="key-button key-quote purple" data-key="'">日</button>
   </div>
   
    <!-- 輸出目前按到的值 -->

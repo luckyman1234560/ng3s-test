@@ -2,7 +2,7 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>廣韻猜聲母ver1.2</title> 
+  <title>廣韻猜聲母ver1.3</title> 
   <meta name="author" content="我">
   <meta name="description" content="首頁">
   <meta name="keywords" content="網站">
@@ -162,6 +162,13 @@
   <p class="tip">目前選擇的聲母：<span id="selected-conso">（尚未選擇）</span></p>
 
   <script>
+    buttons.forEach(button => {
+      const key = button.getAttribute('data-key');
+      const label = document.createElement('span');
+      label.className = 'key-label';
+      label.textContent = key;
+      button.appendChild(label);
+    });
     let consochar = '';
     const buttons = document.querySelectorAll('.key-button');
     const display = document.getElementById('selected-conso');

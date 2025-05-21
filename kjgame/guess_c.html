@@ -153,5 +153,25 @@
     <button class="key-button key-slash blue2">來</button>
     <button class="key-button key-quote blue2">日</button>
   </div>
+  
+   <!-- 輸出目前按到的值 -->
+  <p class="tip">目前選擇的聲母：<span id="selected-conso">（尚未選擇）</span></p>
+
+  <script>
+    let consochar = '';
+
+    // 取得所有按鈕
+    const buttons = document.querySelectorAll('.key-button');
+    const display = document.getElementById('selected-conso');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        consochar = button.textContent;
+        display.textContent = consochar; // 即時顯示
+        // 你也可以在這裡執行其他動作，例如 console.log(consochar);
+      });
+    });
+  </script>
+  
 </body>
 </html>

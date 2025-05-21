@@ -1,22 +1,74 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
-    <head>
-        <meta charset="UTF-8">
-        <title>廣韻猜聲母</title> 
-        <meta name="author" content="我">
-        <meta name="description" content="首頁">
-        <meta name="keywords" content="網站">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="css/guess.css">
-    </head>
-    <body>
-        <p id="box_tip" class="tip">隨機按一個鍵啟動遊戲</p>
-        <div id="word" class="q">字</div>
-        <p id="box_check" class="tip">目前持續製作中，隨時會更新。</p>
-        <p id="box_num" class="tip">（這裡等一下顯示得分）</p>
-        <div style="display: flex; justify-content: center;" id="box_kb"></div>
-        <script src="keyboard.html">
-        </script>
-        <script src="js/guess_c.js"></script>
-    </body>
+<head>
+  <meta charset="UTF-8">
+  <title>廣韻猜聲母</title> 
+  <meta name="author" content="我">
+  <meta name="description" content="首頁">
+  <meta name="keywords" content="網站">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: #fff;
+    }
+
+    .tip {
+      text-align: center;
+      margin: 10px 0;
+      font-size: 18px;
+      color: #333;
+    }
+
+    .q {
+      font-size: 48px;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .keyboard-area {
+      position: relative;
+      width: 600px;
+      height: 200px;
+      border: 1px solid #ccc;
+      margin: 20px auto;
+      background-color: #f9f9f9;
+    }
+
+    .key-button {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      background-color: rgb(255, 133, 133);
+      border: none;
+      border-radius: 12px;
+      font-size: 18px;
+      color: white;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* 模擬鍵盤上 '1' 鍵的位置 */
+    .key-1 {
+      top: 20px;
+      left: 60px;
+    }
+  </style>
+</head>
+<body>
+  <p id="box_tip" class="tip">隨機按一個鍵啟動遊戲</p>
+  <div id="word" class="q">字</div>
+  <p id="box_check" class="tip">目前持續製作中，隨時會更新。</p>
+  <p id="box_num" class="tip">（這裡等一下顯示得分）</p>
+
+  <!-- 鍵盤模擬區塊 -->
+  <div class="keyboard-area">
+    <button class="key-button key-1">幫</button>
+  </div>
+</body>
 </html>

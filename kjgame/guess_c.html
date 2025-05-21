@@ -2,13 +2,32 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>廣韻猜聲母ver1.8</title> 
+  <title>廣韻猜聲母ver1.9</title> 
   <meta name="author" content="我">
   <meta name="description" content="首頁">
   <meta name="keywords" content="網站">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    .key-wrapper {
+      position: relative;
+      display: inline-block;
+    }
+
+    .key-label-float {
+      position: absolute;
+      top: -6px;
+      left: -4px;
+      font-size: 10px;
+      background: rgba(0, 0, 0, 0.4);
+      color: white;
+      padding: 1px 3px;
+      border-radius: 3px;
+      pointer-events: none;
+      user-select: none;
+      z-index: 2;
+    }
+    
     body {
       font-family: sans-serif;
       padding: 20px;
@@ -180,13 +199,30 @@
     const display = document.getElementById('selected-conso');
 
     // 點擊按鈕時更新 consochar
+    
     buttons.forEach(button => {
+      const key = button.getAttribute('data-key');
+      const wrapper = document.createElement('div');
+      wrapper.className = 'key-wrapper';
+      wrapper.style.position = 'relative';
+      wrapper.style.display = 'inline-block';
+
+      button.parentNode.insertBefore(wrapper, button);
+      wrapper.appendChild(button);
+      const label = document.createElement('div');
+      label.className = 'key-label-float';
+      label.textContent = key;
+      wrapper.appendChild(label);
+
       button.addEventListener('click', () => {
         consochar = button.textContent;
         display.textContent = consochar;
       });
     });
 
+    
+
+    
     // 鍵盤對應資料表：key 對應 data-key 屬性
     const keyMap = {};
     buttons.forEach(button => {
